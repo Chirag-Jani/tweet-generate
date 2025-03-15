@@ -18,6 +18,7 @@ app.post("/generate-tweet", async (req, res) => {
   try {
     const response = await model.generateContent(prompt);
     const data = response.response.text();
+    console.log("Response: ", data);
 
     res.json({
       tweet: data,
